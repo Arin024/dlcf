@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="img">
+        
+        <img src="dlcf.logo.jpg" alt="dlcf image" 
+        style="border-radius: 50%; width: 8%;position: relative; height: 20%; margin-top: 5px;" >
+    </div>
+    <div class="top-nav" id="top-nav"><a href="#home" ></a>
+        
+        <a href="#">HOME</a>
+        <a href="#">SPEAKER</a>
+        <a href="#" class="active">PAGES</a>
+        <a href="#">BLOG</a>
+        <a href="#">CONTACT</a>
+        <a href="javascript:void(0);" class="icon" onclick="myfunction()">
+        </a>
+    </div>
+    <img src="vigil.image.jpg" alt="vigil-image">
+    <p id="demo" style="margin-left: 50%; position: relative; color: aliceblue;width: 10%; background-color: blueviolet;">COUNTDOWN:</p>
+    <div  style="display: inline-flex; ">
+    <br> 
+    <p style="width: 40%; left: 8px;  padding: 10%; height: 60%; box-shadow:5px 14px 14px
+     10px  #888888; background-color: #566; position: relative;">And it shall come to pass afterward,<br> that I will pour out my spirit upon<br> all flesh; and your sons and<br> daughters shall prophesy,your old men<br> shall dream dreams, your young <br>men shall see visions: Joel 2:28<br></p>
+          <p style="width: 40%; margin-right: 10px; padding: 10%; height: 60%; box-shadow:5px 14px 14px p
+     10px  #888888; background-color: #566;">And I will shew wonders in the<br> heavens and in the earth,<br>blood,and fire,and pillars<br> of smoke:Joel 2:30</p>
+</div>
+<script>
+
+    var countdownDate=new Date("Nov 20,2020 20:30:30").getTime();
+    //update the time per second
+    var x=setInterval(function(){
+        //get todays date and time
+        var now= new Date().getTime();
+        //distance btw bow and the countdown date
+        var distance=countdownDate-now;
+        //time calculate for days, minutes and second
+        var days =Math.floor(distance/(1000*60*60*24));
+        var hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+        var minutes=Math.floor((distance%(1000 *60*60))/(1000*60));
+        var seconds=Math.floor((distance%(1000*60))/100);
+        //display the result
+        document.getElementById("demo").innerHTML=days +" day "
+         + hours + " Hr "+ minutes + " Min " + seconds + " sec ";
+         if(distance <0){
+             clearInterval(x);
+             document.getElementById("demo").innerHTML="WELCOME TO THE NIGHT OF FIRE"
+         }
+    },1000);
+</script>
+</body>
+</html>
